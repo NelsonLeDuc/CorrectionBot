@@ -30,7 +30,7 @@
 			"Rev": "2352a8dbbfbee3e25d920f49e29cc51933138ab8"
 		},
 		{
-			"ImportPath": "github.com/nelsonleduc/calmanbot/handlers",
+			"ImportPath": "github.com/nelsonleduc/calmanbot/handlers/models",
 			"Comment": "v2.0.0-1-g2352a8d",
 			"Rev": "2352a8dbbfbee3e25d920f49e29cc51933138ab8"
 		},

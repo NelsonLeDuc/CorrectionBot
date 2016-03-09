@@ -3,7 +3,7 @@ package main
 import (
 	"net/http"
 
-	"github.com/nelsonleduc/calmanbot/handlers"
+	"github.com/nelsonleduc/correctionbot/handlers"
 )
 
 type Route struct {
