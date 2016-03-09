@@ -2,6 +2,7 @@ package handlers
 
 import (
 	"encoding/json"
+	"fmt"
 	"io/ioutil"
 	"net/http"
 	"os"
@@ -20,8 +21,12 @@ func HandleCalman(message service.Message, service service.Service, cache cache.
 
 	bot, _ := models.FetchBot(message.GroupID())
 
+	fmt.Println(message.Text())
+
 	if IsImgur(message.Text()) {
+		fmt.Println("matched")
 		fix := CorrectImgur(message.Text())
+		fmt.Println(fix)
 		service.PostText(bot.Key, fix, -1, message)
 	}
 }

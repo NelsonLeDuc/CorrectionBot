@@ -1,6 +1,6 @@
 {
-	"ImportPath": "github.com/nelsonleduc/calmanbot",
-	"GoVersion": "go1.4.2",
+	"ImportPath": "github.com/nelsonleduc/correctionbot",
+	"GoVersion": "go1.5.1",
 	"Deps": [
 		{
 			"ImportPath": "github.com/gorilla/context",
@@ -18,6 +18,31 @@
 			"ImportPath": "github.com/lib/pq",
 			"Comment": "go1.0-cutoff-56-gdc50b6a",
 			"Rev": "dc50b6ad2d3ee836442cf3389009c7cd1e64bb43"
+		},
+		{
+			"ImportPath": "github.com/nelsonleduc/calmanbot/cache",
+			"Comment": "v2.0.0-1-g2352a8d",
+			"Rev": "2352a8dbbfbee3e25d920f49e29cc51933138ab8"
+		},
+		{
+			"ImportPath": "github.com/nelsonleduc/calmanbot/config",
+			"Comment": "v2.0.0-1-g2352a8d",
+			"Rev": "2352a8dbbfbee3e25d920f49e29cc51933138ab8"
+		},
+		{
+			"ImportPath": "github.com/nelsonleduc/calmanbot/handlers",
+			"Comment": "v2.0.0-1-g2352a8d",
+			"Rev": "2352a8dbbfbee3e25d920f49e29cc51933138ab8"
+		},
+		{
+			"ImportPath": "github.com/nelsonleduc/calmanbot/service",
+			"Comment": "v2.0.0-1-g2352a8d",
+			"Rev": "2352a8dbbfbee3e25d920f49e29cc51933138ab8"
+		},
+		{
+			"ImportPath": "github.com/nelsonleduc/calmanbot/utility",
+			"Comment": "v2.0.0-1-g2352a8d",
+			"Rev": "2352a8dbbfbee3e25d920f49e29cc51933138ab8"
 		}
 	]
 }
