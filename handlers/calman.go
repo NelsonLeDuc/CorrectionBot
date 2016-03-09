@@ -7,6 +7,7 @@ import (
 	"net/http"
 	"os"
 	"regexp"
+	"strings"
 
 	"github.com/nelsonleduc/calmanbot/cache"
 	"github.com/nelsonleduc/calmanbot/handlers/models"
@@ -72,12 +73,20 @@ type ImgurResponse struct {
 }
 
 func (i ImgurResponse) Results() []string {
-	return []string{
+
+	order := []string{
 		i.Data.Webm,
 		i.Data.Mp4,
 		i.Data.Gifv,
-		i.Data.Link,
 	}
+
+	if strings.HasSuffix(i.Data.Link, ".gif") {
+		order = append([]string{i.Data.Link}, order...)
+	} else {
+		order = append(order, i.Data.Link)
+	}
+
+	return order
 }
 
 func firstGood(s []string) string {
