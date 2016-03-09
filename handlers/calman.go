@@ -27,10 +27,18 @@ func HandleCalman(message service.Message, service service.Service, cache cache.
 	if IsImgur(message.Text()) {
 		fmt.Println("matched")
 		fix := CorrectImgur(message.Text())
+		if len(fix) == 0 {
+			return
+		}
+
 		fmt.Println(fix)
 		service.PostText(bot.Key, fix, -1, message)
 	}
 }
+
+//IMGUR
+
+const gifMaxSize = 1000000 * 20 //20 megabytes
 
 func IsImgur(text string) bool {
 	r, _ := regexp.Compile("(?i)https*:\\/\\/w{0,3}.*imgur.com\\/gallery\\/(\\w+)")
@@ -58,9 +66,11 @@ func CorrectImgur(text string) string {
 	var stuff ImgurResponse
 	json.Unmarshal(body, &stuff)
 
-	result := firstGood(stuff.Results())
+	if strings.HasSuffix(stuff.Data.Link, ".gif") && stuff.Data.Size > gifMaxSize {
+		return ""
+	}
 
-	return result
+	return stuff.Data.Link
 }
 
 type ImgurResponse struct {
@@ -71,33 +81,4 @@ type ImgurResponse struct {
 		Mp4  string `json:"mp4"`
 		Webm string `json:"webm"`
 	} `json:"data"`
-}
-
-const gifMaxSize = 1000000 * 20 //20 megabytes
-
-func (i ImgurResponse) Results() []string {
-
-	order := []string{
-		i.Data.Webm,
-		i.Data.Mp4,
-		i.Data.Gifv,
-	}
-
-	if strings.HasSuffix(i.Data.Link, ".gif") && i.Data.Size < gifMaxSize {
-		order = append([]string{i.Data.Link}, order...)
-	} else {
-		order = append(order, i.Data.Link)
-	}
-
-	return order
-}
-
-func firstGood(s []string) string {
-	for _, x := range s {
-		if len(x) > 0 {
-			return x
-		}
-	}
-
-	return ""
 }
