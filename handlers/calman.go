@@ -65,12 +65,15 @@ func CorrectImgur(text string) string {
 
 type ImgurResponse struct {
 	Data struct {
+		Size int    `json:"size"`
 		Link string `json:"link"`
 		Gifv string `json:"gifv"`
 		Mp4  string `json:"mp4"`
 		Webm string `json:"webm"`
 	} `json:"data"`
 }
+
+const gifMaxSize = 1000000 * 20 //20 megabytes
 
 func (i ImgurResponse) Results() []string {
 
@@ -80,7 +83,7 @@ func (i ImgurResponse) Results() []string {
 		i.Data.Gifv,
 	}
 
-	if strings.HasSuffix(i.Data.Link, ".gif") {
+	if strings.HasSuffix(i.Data.Link, ".gif") && i.Data.Size < gifMaxSize {
 		order = append([]string{i.Data.Link}, order...)
 	} else {
 		order = append(order, i.Data.Link)
