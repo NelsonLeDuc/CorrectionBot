@@ -21,28 +21,28 @@
 		},
 		{
 			"ImportPath": "github.com/nelsonleduc/calmanbot/cache",
-			"Comment": "v2.0.0-1-g2352a8d",
-			"Rev": "2352a8dbbfbee3e25d920f49e29cc51933138ab8"
+			"Comment": "v2.0.0-3-g40dbb45",
+			"Rev": "40dbb455cad24f33f622bef3775d322f6d0b3cf0"
 		},
 		{
 			"ImportPath": "github.com/nelsonleduc/calmanbot/config",
-			"Comment": "v2.0.0-1-g2352a8d",
-			"Rev": "2352a8dbbfbee3e25d920f49e29cc51933138ab8"
+			"Comment": "v2.0.0-3-g40dbb45",
+			"Rev": "40dbb455cad24f33f622bef3775d322f6d0b3cf0"
 		},
 		{
-			"ImportPath": "github.com/nelsonleduc/calmanbot/handlers/models",
-			"Comment": "v2.0.0-1-g2352a8d",
-			"Rev": "2352a8dbbfbee3e25d920f49e29cc51933138ab8"
+			"ImportPath": "github.com/nelsonleduc/calmanbot/handlers",
+			"Comment": "v2.0.0-3-g40dbb45",
+			"Rev": "40dbb455cad24f33f622bef3775d322f6d0b3cf0"
 		},
 		{
 			"ImportPath": "github.com/nelsonleduc/calmanbot/service",
-			"Comment": "v2.0.0-1-g2352a8d",
-			"Rev": "2352a8dbbfbee3e25d920f49e29cc51933138ab8"
+			"Comment": "v2.0.0-3-g40dbb45",
+			"Rev": "40dbb455cad24f33f622bef3775d322f6d0b3cf0"
 		},
 		{
 			"ImportPath": "github.com/nelsonleduc/calmanbot/utility",
-			"Comment": "v2.0.0-1-g2352a8d",
-			"Rev": "2352a8dbbfbee3e25d920f49e29cc51933138ab8"
+			"Comment": "v2.0.0-3-g40dbb45",
+			"Rev": "40dbb455cad24f33f622bef3775d322f6d0b3cf0"
 		}
 	]
 }
