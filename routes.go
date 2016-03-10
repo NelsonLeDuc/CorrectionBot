@@ -3,6 +3,7 @@ package main
 import (
 	"net/http"
 
+	calman "github.com/nelsonleduc/calmanbot/handlers"
 	"github.com/nelsonleduc/correctionbot/handlers"
 )
 
@@ -20,6 +21,6 @@ var routes = Routes{
 		"CalmanRespond",
 		"POST",
 		"/bots/botHook",
-		handlers.BotHook(handlers.HandleCalman),
+		calman.BotHook(handlers.HandleCalman),
 	},
 }
