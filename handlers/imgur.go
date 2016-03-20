@@ -9,7 +9,7 @@ import (
 )
 
 const gifMaxSize = 1000000 * 20 //20 megabytes
-var imgurMatches = matchFunc("(?i)https*:\\/\\/w{0,3}.*imgur.com\\/gallery\\/(\\w+)")
+var imgurMatches = matchFunc("https*:\\/\\/.*imgur.com(?:\\/gallery)*\\/(\\w+)(?:\\?r)*")
 
 func CorrectImgur(text string) string {
 	matched := imgurMatches(text)
